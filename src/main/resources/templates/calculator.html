@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rechner</title>
+</head>
+<body>
+
+    <h1>Einfacher Rechner</h1>
+
+    <form action="/calculate" method="get">
+        <input type="number" name="num1" step="any" required placeholder="Zahl 1">
+        <input type="number" name="num2" step="any" required placeholder="Zahl 2">
+
+        <select name="operation" required>
+            <option value="add">Addieren</option>
+            <option value="subtract">Subtrahieren</option>
+            <option value="multiply">Multiplizieren</option>
+            <option value="divide">Dividieren</option>
+        </select>
+
+        <button type="submit">Berechnen</button>
+    </form>
+
+    <div>
+        <h2>Ergebnis:</h2>
+        <p th:if="${error}" th:text="${error}" style="color: red;"></p>
+        <p th:if="${result != null}" th:text="'Das Ergebnis ist: ' + ${result}"></p>
+    </div>
+
+</body>
+</html>
