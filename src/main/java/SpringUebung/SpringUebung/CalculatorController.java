@@ -9,7 +9,7 @@ public class CalculatorController {
 
     @GetMapping("/calculator")
     public String calculator() {
-        return "calculator";
+        return "calculator"; // Rendert die calculator.html für GET-Anfragen
     }
 
     @PostMapping("/calculate")
@@ -50,6 +50,6 @@ public class CalculatorController {
         }
 
         model.addAttribute("result", result);
-        return "calculator";
+        return "calculator"; // Rendert dieselbe View nach POST-Anfrage mit dem Ergebnis
     }
 }
