@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rechner</title>
+</head>
+<body>
+    <h1>Einfacher Rechner</h1>
+    <form action="/" method="get">
+        <input type="number" name="number1" value="{{number1}}" placeholder="Zahl 1" required>
+        <select name="operation">
+            <option value="add" {{#isAdd}}selected{{/isAdd}}>Addieren</option>
+            <option value="subtract" {{#isSubtract}}selected{{/isSubtract}}>Subtrahieren</option>
+            <option value="multiply" {{#isMultiply}}selected{{/isMultiply}}>Multiplizieren</option>
+            <option value="divide" {{#isDivide}}selected{{/isDivide}}>Dividieren</option>
+        </select>
+        <input type="number" name="number2" value="{{number2}}" placeholder="Zahl 2" required>
+        <button type="submit">Berechnen</button>
+    </form>
+
+    {{#result}}
+        <h2>Ergebnis: {{result}}</h2>
+    {{/result}}
+</body>
+</html>
